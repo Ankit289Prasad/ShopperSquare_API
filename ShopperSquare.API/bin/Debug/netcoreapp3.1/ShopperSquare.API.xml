@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShopperSquare.API</name>
+    </assembly>
+    <members>
+        <member name="M:ShopperSquare.API.Controllers.CartController.AddItemInCart(System.Int32)">
+            <summary>
+            API to add an item in cart
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.CartController.RemoveItemInCart(System.Int32)">
+            <summary>
+            API to remove an item in cart
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.CartController.GetItemsInCart(ShopperSquare.API.DTO.PaginationDTO)">
+            <summary>
+            API to fetch all item in cart
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.CartController.CheckOut">
+            <summary>
+            API to checkout all items in cart
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.ItemController.AddItem(ShopperSquare.API.DTO.Request.ItemRequest)">
+            <summary>
+            API to add a new item
+            </summary>
+            <param name="itemRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.ItemController.GetItems(ShopperSquare.API.DTO.PaginationDTO)">
+            <summary>
+            API to get all items in paginated form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.ItemController.GetItemsBasedOnCategory(ShopperSquare.API.DTO.PaginationDTO)">
+            <summary>
+            API to get all items based on category in paginated form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.ItemController.GetItemsByPartialName(ShopperSquare.API.DTO.PaginationDTO)">
+            <summary>
+            API to get all items by partial product name in paginated form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.OrderController.GetAllOrder(ShopperSquare.API.DTO.PaginationDTO)">
+            <summary>
+            API to get all order history
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.UserController.RegisterUser(ShopperSquare.API.DTO.Request.UserRequest)">
+            <summary>
+            API to add a new user
+            </summary>
+            <param name="userRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.UserController.ResetPassword(System.String[])">
+            <summary>
+            API to reset password
+            </summary>
+            <param name="keyValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.UserController.ValidLogin(ShopperSquare.API.DTO.Request.LoginRequest)">
+            <summary>
+            API to LoginUser
+            </summary>
+            <param name="logDetails"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

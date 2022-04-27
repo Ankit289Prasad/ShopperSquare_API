@@ -1,0 +1,12 @@
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\bin\Debug\netcoreapp3.1\ShopperSquare.DL.deps.json
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\bin\Debug\netcoreapp3.1\ShopperSquare.DL.runtimeconfig.json
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\bin\Debug\netcoreapp3.1\ShopperSquare.DL.runtimeconfig.dev.json
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\bin\Debug\netcoreapp3.1\ShopperSquare.DL.dll
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\bin\Debug\netcoreapp3.1\ShopperSquare.DL.pdb
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.AssemblyInfoInputs.cache
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.AssemblyInfo.cs
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.csproj.CoreCompileInputs.cache
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.dll
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.pdb
+C:\Users\ankit\source\repos\Minor_Project_1\ShopperSquare.DL\obj\Debug\netcoreapp3.1\ShopperSquare.DL.genruntimeconfig.cache
