@@ -10,6 +10,7 @@ namespace ShopperSquare.BL.Interface
     {
         public Task<bool> RegisterUser(UserBL newUser);
         public Task<bool> ValidLogin(UserLoginBL loginBL);
-        public Task<bool> ResetPassword(string oldPassword,string newPassword,string emailId);
+        public Task<bool> GenerateResetPasswordCode(string emailId);
+        public Task<bool> ResetPasswordByCode(string emailId, string resetCode, string newPassword);
     }
 }

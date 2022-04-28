@@ -17,6 +17,10 @@
     <Compile Remove="Migrations\20220426071303_InitCart.Designer.cs" />
     <Compile Remove="Migrations\20220427104218_InitOrder.cs" />
     <Compile Remove="Migrations\20220427104218_InitOrder.Designer.cs" />
+    <Compile Remove="Migrations\20220428110721_result_intial.cs" />
+    <Compile Remove="Migrations\20220428110721_result_intial.Designer.cs" />
+    <Compile Remove="Migrations\20220428110915_result_intial_1.cs" />
+    <Compile Remove="Migrations\20220428110915_result_intial_1.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

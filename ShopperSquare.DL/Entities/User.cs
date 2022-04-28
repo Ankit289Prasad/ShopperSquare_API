@@ -11,6 +11,7 @@ namespace ShopperSquare.DL.Entities
         [Required]
         [StringLength(102)]
         public string Name { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string EmailId { get; set; }
         [Range(10, 60)]
         public int Age { get; set; }

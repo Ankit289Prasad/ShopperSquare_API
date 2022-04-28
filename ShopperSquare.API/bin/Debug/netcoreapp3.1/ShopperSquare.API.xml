@@ -68,9 +68,16 @@
             <param name="userRequest"></param>
             <returns></returns>
         </member>
-        <member name="M:ShopperSquare.API.Controllers.UserController.ResetPassword(System.String[])">
+        <member name="M:ShopperSquare.API.Controllers.UserController.GeneratePasswordResetCode(ShopperSquare.API.DTO.Request.PasswordResetRequest)">
             <summary>
-            API to reset password
+            API to send password reset code
+            </summary>
+            <param name="User"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShopperSquare.API.Controllers.UserController.ResetPasswordByCode(ShopperSquare.API.DTO.Request.PasswordResetRequest)">
+            <summary>
+            API to reset password by code
             </summary>
             <param name="keyValues"></param>
             <returns></returns>

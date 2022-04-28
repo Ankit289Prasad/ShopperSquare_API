@@ -18,6 +18,16 @@ namespace ShopperSquare.BL.Implementation
             _repo = repo;
         }
 
+        public Task<bool> GenerateResetPasswordCode(string emailId)
+        {
+            return _repo.GenerateResetPasswordCode(emailId);
+        }
+
+        public Task<bool> ResetPasswordByCode(string emailId, string resetCode, string newPassword)
+        {
+            return _repo.ResetPasswordByCode(emailId, resetCode, newPassword);
+        }
+
         public async Task<bool> RegisterUser(UserBL newUser)
         {
             var newEntity = new User
@@ -31,14 +41,6 @@ namespace ShopperSquare.BL.Implementation
             //var newEntity = _mapper.Map<User>(newUser);
 
             return await _repo.RegisterUser(newEntity);
-        }
-
-
-        public async Task<bool> ResetPassword(string oldPassword,string newPassword,string emailId)
-        {
-            if (newPassword.Length < 8)
-                return false;
-            return await _repo.ResetPassword(oldPassword, newPassword, emailId);
         }
 
         public async Task<bool> ValidLogin(UserLoginBL loginBL)

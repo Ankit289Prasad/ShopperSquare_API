@@ -13,6 +13,7 @@ namespace ShopperSquare.DL
         public DbSet<User> Users { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Orders> Orders { get; set; }
+        public DbSet<ResetPasswordCode> ResetPasswordCodes { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

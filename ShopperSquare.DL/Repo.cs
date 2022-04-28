@@ -22,30 +22,61 @@ namespace ShopperSquare.DL
 
         public async Task<bool> RegisterUser(User newUser)
         {
-            _dbContext.Users.Add(newUser);
-            var result = await _dbContext.SaveChangesAsync();
-            if (result == 1)
+            var entity = _dbContext.Users.FirstOrDefault(x => x.EmailId == newUser.EmailId);
+            if (entity == null)
             {
+                _dbContext.Users.Add(newUser);
+                var result = await _dbContext.SaveChangesAsync();
+                if (result == 1)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public async Task<bool> GenerateResetPasswordCode(string emailId)
+        {
+            var userEntity = _dbContext.Users.Where(x => x.EmailId == emailId);
+            var resetCodeEntity = _dbContext.ResetPasswordCodes.FirstOrDefault(x => x.UserEmail == emailId);
+            if (userEntity != null && resetCodeEntity == null)
+            {
+                Random ran = new Random();
+                string b = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*~";
+                int length = 6;
+                string random = "";
+
+                for (int i = 0; i < length; i++)
+                {
+                    int a = ran.Next(b.Length); //string.Lenght gets the size of string
+                    random = random + b.ElementAt(a);
+                }
+                _dbContext.ResetPasswordCodes.Add(new ResetPasswordCode
+                {
+                    UserEmail = emailId,
+                    ResetCode = random
+                });
+                await _dbContext.SaveChangesAsync();
                 return true;
             }
             return false;
         }
 
-        public async Task<bool> ResetPassword(string oldPassword, string newPassword, string emailId)
+        public async Task<bool> ResetPasswordByCode(string emailId, string resetCode, string newPassword)
         {
-            var resultUser = _dbContext.Users.FirstOrDefault(x => x.Password == oldPassword && x.EmailId == emailId);
-            if (resultUser == null)
+            var resetEntity = _dbContext.ResetPasswordCodes.FirstOrDefault(x => x.ResetCode == resetCode && x.UserEmail == emailId);
+            if (resetEntity != null)
+            {
+                var userEntity = _dbContext.Users.FirstOrDefault(x => x.EmailId == emailId);
+                userEntity.Password = newPassword;
+                _dbContext.ResetPasswordCodes.Remove(resetEntity);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            else
             {
                 return false;
             }
-            resultUser.Password = newPassword;
-            var status = await _dbContext.SaveChangesAsync();
-            if (status == 1)
-            {
-                loginFlag = false;
-                return true;
-            }
-            return false;
         }
 
         public async Task<bool> ValidLogin(string emailId, string password)
@@ -190,8 +221,8 @@ namespace ShopperSquare.DL
                         DiscountAmount = item.DiscountAmount,
                         MRPAmount = item.MRPAmount,
                         Image = itemEntity.Image,
-                        ProductName= itemEntity.Name,
-                        Quantity=item.ItemCount
+                        ProductName = itemEntity.Name,
+                        Quantity = item.ItemCount
                     });
                 }
             }
@@ -240,5 +271,6 @@ namespace ShopperSquare.DL
                 return null;
             }
         }
+
     }
 }

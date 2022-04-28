@@ -52,14 +52,33 @@ namespace ShopperSquare.API.Controllers
         //------Password Reset------
 
         /// <summary>
-        /// API to reset password
+        /// API to send password reset code
+        /// </summary>
+        /// <param name="User"></param>
+        /// <returns></returns>
+        [HttpGet("GenerateResetPasswordCode")]
+        public async Task<ActionResult> GeneratePasswordResetCode([FromQuery] PasswordResetRequest User)
+        {
+            var checkStatus = await _userService.GenerateResetPasswordCode(User.Email);
+            if (checkStatus)
+            {
+                return StatusCode(StatusCodes.Status202Accepted);
+            }
+            else
+            {
+                return BadRequest("Error while generating code may be plaese register first");
+            }
+        }
+
+        /// <summary>
+        /// API to reset password by code
         /// </summary>
         /// <param name="keyValues"></param>
         /// <returns></returns>
-        [HttpPost("ResetPassword")]
-        public async Task<ActionResult> ResetPassword([FromBody] string[] keyValues)
+        [HttpGet("ResetPasswordByCode")]
+        public async Task<ActionResult> ResetPasswordByCode([FromQuery] PasswordResetRequest keyValues)
         {
-            var checkStatus = await _userService.ResetPassword(keyValues[0], keyValues[1], keyValues[2]);
+            var checkStatus = await _userService.ResetPasswordByCode(keyValues.Email,keyValues.ResetCode,keyValues.NewPassword);
             if (checkStatus)
             {
                 return StatusCode(StatusCodes.Status201Created);

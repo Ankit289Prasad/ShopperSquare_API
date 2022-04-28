@@ -11,7 +11,8 @@ namespace ShopperSquare.DL
     {
         Task<bool> RegisterUser(User newUser);
         Task<bool> ValidLogin(string emailId, string password);
-        Task<bool> ResetPassword(string oldPassword,string newPassword,string emailId);
+        Task<bool> GenerateResetPasswordCode(string emailId);
+        Task<bool> ResetPasswordByCode(string emailId,string resetCode,string newPassword);
 
         Task<bool> AddItem(Item newItem);
         List<Item> GetItems();
